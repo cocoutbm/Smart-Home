@@ -2,11 +2,15 @@ package Smart_Home_Syteme;
 
 public class Equipements_domestiques {
     protected String nom;
-    protected int prix;
+    protected double consommation;
 
-    public Equipements_domestiques(String nom, int prix) {
+    public Equipements_domestiques(){
+        this.nom="ED";
+        this.consommation=0.0;
+    }
+    public Equipements_domestiques(String nom, float consommation) {
         this.nom = nom;
-        this.prix = prix;
+        this.consommation = consommation;
     }
 
     public void utiliserEquipementDomestique() {
