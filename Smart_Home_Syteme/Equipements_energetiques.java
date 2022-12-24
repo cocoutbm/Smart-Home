@@ -1,9 +1,9 @@
 package Smart_Home_Syteme;
 
 public class Equipements_energetiques {
-    private String nom;
-    private double prix;
-    private double consommation;
+    protected String nom;
+    protected double prix;
+    protected double consommation;
 
     public Equipements_energetiques(){
         this.nom = "EE";
