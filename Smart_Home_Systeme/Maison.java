@@ -1,6 +1,7 @@
 package Smart_Home_Systeme;
 
 public class Maison {
+    private Meteo meteo;
     private float temperature;
     private float humidite;
     private float luminosite;
@@ -17,6 +18,9 @@ public class Maison {
     private Equipements_energetiques Ampoule1;
     private Equipements_energetiques Ampoule2;
     private Equipements_energetiques Ampoule3;
+    private Equipements_energetiques equipement;
+
+    private Equipements_domestiques equipements_domestiques;
 
     public Maison(){
         this.temperature = 0;
@@ -74,4 +78,26 @@ public class Maison {
         Ampoule2.showEquipementsEnergetiques();
         Ampoule3.showEquipementsEnergetiques();
     }
+    public float getHumidite() {
+        return meteo.getHumidite();
+    }
+
+    public void setHumidite(float hum) {
+        meteo.setHumidite(hum);
+    }
+
+    public float getTemperature() {
+        return meteo.getTemperature();
+    }
+    public void setTemperature(float temp) {
+        meteo.setHumidite(temp);
+    }
+    public void setEquipement_energetique(Equipements_energetiques equip) {
+            this.equipement = equip;
+    }
+
+    public void setEquipement_domestique(Equipements_domestiques equip) {
+        this.equipements_domestiques = equip;
+    }
+
 }

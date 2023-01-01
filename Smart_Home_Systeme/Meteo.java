@@ -4,6 +4,7 @@ public class Meteo {
 
     protected float humidite;
     protected float temperature;
+    private Maison maison;
 
     public Meteo(){
         this.humidite=40;
@@ -16,17 +17,31 @@ public class Meteo {
 
     }
 
-    public void ModifieMaison(){
-
-
-
-
+    public void modifieMaison(){
+        maison.setTemperature(this.temperature);
+        maison.setHumidite(this.humidite);
     }
 
     public float getHumidite() {
         return humidite;
+
     }
+    public void setHumidite(float hum) {
+        this.humidite = hum;
+        modifieMaison();
+
+    }
+
     public float getTemperature() {
         return temperature;
     }
+    public void setTemperature(float temp) {
+        this.temperature = temp;
+        modifieMaison();
+
+    }
+
+
+
+
 }
