@@ -80,4 +80,16 @@ public class Joueur {
         this.argent -= EE.getPrix();
         return EE;
     }
+
+
+    public void abandonner() {
+        System.out.println("Fin de la partie");
+        System.exit(0);
+    }
+    public void lancerPartie() {
+        System.out.println("Bienvenue frero tu t'appeles  " + this.pseudo + " et t'as " + this.argent + "€, bonne chance pour survivre dans cette maison de merde ");
+        // reste du code a faire
+
+    }
+
 }

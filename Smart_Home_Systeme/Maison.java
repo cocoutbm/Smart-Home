@@ -3,6 +3,7 @@ package Smart_Home_Systeme;
 import java.util.ArrayList;
 
 public class Maison {
+    private Meteo meteo;
     private float temperature;
     private float humidite;
     private float luminosite;
@@ -26,9 +27,9 @@ public class Maison {
 
     public void showMaison(){
         System.out.println("Mesures Météo interne de la Smart Home");
-        System.out.println("    Température: " + temperature + " °C.");
-        System.out.println("    Humidité: " + humidite + " %.");
-        System.out.println("    Luminosité: " + luminosite + " lux.");
+        System.out.println(" Température: " + temperature + " °C.");
+        System.out.println(" Humidité: " + humidite + " %.");
+        System.out.println(" Luminosité: " + luminosite + " lux.");
 
         System.out.println("Équipements Domestiques de la Smart Home");
         douche.showEquipementsDomestiques();
@@ -41,4 +42,20 @@ public class Maison {
             EE.showEquipementsEnergetiques();
         }
     }
+    public float getHumidite() {
+        return meteo.getHumidite();
+    }
+
+    public void setHumidite(float hum) {
+        meteo.setHumidite(hum);
+    }
+
+    public float getTemperature() {
+        return meteo.getTemperature();
+    }
+    public void setTemperature(float temp) {
+        meteo.setHumidite(temp);
+    }
 }
+
+
