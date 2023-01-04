@@ -4,22 +4,15 @@ public class Meteo {
 
     protected float humidite;
     protected float temperature;
-    private Maison maison;
 
     public Meteo(){
-        this.humidite=40;
-        this.temperature=22;
+        this.humidite=0;
+        this.temperature=0;
     }
 
     public Meteo(float hum, float temp){
         this.humidite=hum;
         this.temperature=temp;
-
-    }
-
-    public void modifieMaison(){
-        maison.setTemperature(this.temperature);
-        maison.setHumidite(this.humidite);
     }
 
     public float getHumidite() {
@@ -28,8 +21,6 @@ public class Meteo {
     }
     public void setHumidite(float hum) {
         this.humidite = hum;
-        modifieMaison();
-
     }
 
     public float getTemperature() {
@@ -37,8 +28,19 @@ public class Meteo {
     }
     public void setTemperature(float temp) {
         this.temperature = temp;
-        modifieMaison();
-
     }
 
+    public void ModifieMeteoBT(BonTemps bon){
+        this.temperature=bon.getTemperature();
+        bon.setTemperature(0);
+        this.humidite=bon.getHumidite();
+        bon.setHumidite(0);
+    }
+
+    public void ModifieMeteoMT(MauvaisTemps mauvais){
+        this.temperature=mauvais.getTemperature();
+        mauvais.setTemperature(0);
+        this.humidite=mauvais.getHumidite();
+        mauvais.setHumidite(0);
+    }
 }

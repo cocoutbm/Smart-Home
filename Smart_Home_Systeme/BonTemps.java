@@ -9,12 +9,10 @@ public class BonTemps extends Meteo {
         super(hum, temp);
     }
 
-    public void augmenteTemp() {
+    public void ModifieBonTemps() {
         this.temperature += 1;
+        this.humidite -= 2;
+
     }
 
-    public void diminueHum() {
-        this.humidite -= 2;
-    }
-    //
 }

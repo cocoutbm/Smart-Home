@@ -15,6 +15,7 @@ public class Maison {
 
 
     public Maison(ArrayList<Equipements_energetiques> tab){
+        this.meteo = new Meteo();
         this.temperature = 23;
         this.humidite = 55;
         this.luminosite = 500;
@@ -43,18 +44,22 @@ public class Maison {
         }
     }
     public float getHumidite() {
-        return meteo.getHumidite();
+        return humidite;
     }
 
     public void setHumidite(float hum) {
-        meteo.setHumidite(hum);
+        this.humidite=hum;
     }
 
     public float getTemperature() {
-        return meteo.getTemperature();
+        return temperature;
     }
     public void setTemperature(float temp) {
-        meteo.setHumidite(temp);
+        this.temperature=temp;
+    }
+    public void ModifieMaison(Meteo meteo1){
+            this.temperature=this.temperature+meteo1.getTemperature();
+            this.humidite=this.humidite+meteo1.getHumidite();
     }
 }
 
