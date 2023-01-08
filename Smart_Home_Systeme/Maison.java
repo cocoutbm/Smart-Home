@@ -127,6 +127,38 @@ public class Maison {
     public Meteo getMeteo() {
         return meteo;
     }
+    public ArrayList<Equipements_domestiques> createListe_ED(Equipements_domestiques douche, Equipements_domestiques lampes, Equipements_domestiques four, Equipements_domestiques television) {
+        ArrayList<Equipements_domestiques> tab_ED = new ArrayList<>();
+        tab_ED.add(douche);
+        tab_ED.add(lampes);
+        tab_ED.add(four);
+        tab_ED.add(television);
+        return tab_ED;
+    } 
+    public static void Declencherconso(ArrayList<Equipements_domestiques> tab_ED) {
+        // Vérifier que la liste n'est pas vide
+        if (tab_ED.isEmpty()) {
+            throw new IllegalArgumentException("La liste ne doit pas être vide");
+        }
+
+        // Créer un générateur de nombres aléatoires
+        Random rand = new Random();
+
+        // Sélectionner un élément au hasard dans la liste
+        int index = rand.nextInt(tab_ED.size());
+        //return tab_ED.get(index);
+        Equipements_domestiques reponse =tab_ED.get(index);
+
+        //Si l'équipement est utilisé on augmente sa consommation
+        if (reponse.isEstUtilise()==true){
+            reponse.consommation=reponse.consommation*1.1;
+        }
+        else if(reponse.isEstUtilise()==false){ //Si l'équipement n'est pas utilisé on l'utilise 
+            reponse.ustiliserEquipementsDomestiques(true);
+        }
+    
+    }
+
 
 }
 
